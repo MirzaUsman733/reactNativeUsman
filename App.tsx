@@ -13,7 +13,7 @@ function App(): JSX.Element {
     <>
       <View style={styles.container}>
         <Text style={styles.text}>
-          usman
+          Hello World
         </Text>
       </View>
     </>
