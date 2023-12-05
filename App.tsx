@@ -1,36 +1,7 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text, View,
-} from 'react-native';
+import Navigation from './src/Navigation/Navigation';
+const App = () => {
+  return <Navigation />;
+};
 
-
-function App(): JSX.Element {
-
- 
-
-  return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Hello World
-        </Text>
-      </View>
-    </>
-    
-  );
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    color: 'blue',
-    fontWeight: 'bold',
-  },
-});
 export default App;
