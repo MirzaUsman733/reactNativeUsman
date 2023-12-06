@@ -30,18 +30,5 @@ public class MainActivity extends ReactActivity {
         // If you opted-in for the New Architecture, we enable the Fabric Renderer.
         DefaultNewArchitectureEntryPoint.getFabricEnabled());
   }
-   
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.splash_screen);
-    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-
-    new Handler().postDelayed(new Runnable() {
-      @Override
-      public void run() {
-        setContentView(R.layout.activity_main);
-      }
-    }, 3000); // 3 seconds for splash screen
-  }
+  
 }
