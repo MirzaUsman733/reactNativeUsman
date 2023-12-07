@@ -19,7 +19,10 @@ const StartPage1: React.FC<StartPage1Props> = ({navigation}) => {
         style={styles.image}
       />
       <Text style={styles.text}> Make your own travel plan </Text>
-          <Text style={styles.txt}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, est in.    </Text>
+      <Text style={styles.txt}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, est
+        in.{' '}
+      </Text>
       <TouchableOpacity
         onPress={() => navigation.navigate('StartPage2')}
         style={[styles.button, {backgroundColor: '#007BFF'}]}>
@@ -73,13 +76,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     resizeMode: 'cover',
-    borderEndEndRadius: 100,
-    borderTopEndRadius: 100,
-    borderTopLeftRadius: 100,
-    borderTopRightRadius: 100,
-    borderBottomEndRadius: 100,
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 100,
+    borderRadius: 100,
     marginBottom: 20,
   },
 });
