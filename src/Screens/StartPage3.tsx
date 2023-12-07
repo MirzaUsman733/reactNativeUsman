@@ -3,6 +3,7 @@ import {Text, View, StyleSheet, Button} from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Image } from 'react-native';
 
 interface StartPage3Props {
   navigation: NavigationProp<any>;
@@ -11,6 +12,14 @@ interface StartPage3Props {
 const StartPage3: React.FC<StartPage3Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <Image
+        //   source={require('')}
+        // or
+        source={{
+          uri: 'https://images.unsplash.com/photo-1469536155880-453e70e42829?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGhpZ2glMjBlbmQlMjBsZWlzdXJlJTIwcHJvamVjdHN8ZW58MHx8MHx8fDA%3D',
+        }} // for remote images
+        style={styles.image}
+      />
       <Text style={styles.text}> Start Page 3 </Text>
       <TouchableOpacity
         onPress={() => navigation.navigate('Root')}
@@ -53,6 +62,19 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     marginLeft: 10,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    resizeMode: 'cover', // Optional: resizeMode property to control how the image is resized
+    borderEndEndRadius: 100,
+    borderTopEndRadius: 100,
+    borderTopLeftRadius: 100,
+    borderTopRightRadius: 100,
+    borderBottomEndRadius: 100,
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
+    marginBottom: 20,
   },
 });
 
