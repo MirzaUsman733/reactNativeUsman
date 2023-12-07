@@ -8,13 +8,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 import SignUp from '../Screens/SignUp';
 import Login from '../Screens/Login';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import StartPage1 from '../Screens/StartPage1';
+import StartPage2 from '../Screens/StartPage2';
+import StartPage3 from '../Screens/StartPage3';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function Root() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      // screenOptions={{headerShown: false}}
       screenOptions={{
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
@@ -56,6 +58,21 @@ export default function App() {
     <>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="StartPage1"
+            component={StartPage1}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="StartPage2"
+            component={StartPage2}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="StartPage3"
+            component={StartPage3}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Root"
             component={Root}
