@@ -78,8 +78,12 @@ export default function App() {
             component={Root}
             options={{headerShown: false}}
           />
-          <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{title: ''}}
+          />
+          <Stack.Screen name="Login" component={Login} options={{title: ''}} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

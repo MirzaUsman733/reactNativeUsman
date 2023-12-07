@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native';
@@ -13,14 +13,13 @@ const StartPage1: React.FC<StartPage1Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
-        //   source={require('')}
-        // or
         source={{
           uri: 'https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHRyYXZlbCUyMHBsYW58ZW58MHx8MHx8fDA%3D',
-        }} // for remote images
+        }}
         style={styles.image}
       />
-      <Text style={styles.text}> Start Page 1 </Text>
+      <Text style={styles.text}> Make your own travel plan </Text>
+          <Text style={styles.txt}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, est in.    </Text>
       <TouchableOpacity
         onPress={() => navigation.navigate('StartPage2')}
         style={[styles.button, {backgroundColor: '#007BFF'}]}>
@@ -37,16 +36,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 24,
+    fontSize: 25,
     color: 'blue',
     fontWeight: 'bold',
+  },
+  txt: {
+    marginLeft: 10,
+    marginRight: 10,
+    fontSize: 18,
+    color: 'black',
+    opacity: 0.5,
+    textAlign: 'center',
   },
   button: {
     marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#007BFF', // Set your Bootstrap primary color here as well
+    backgroundColor: '#007BFF',
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
-    resizeMode: 'cover', // Optional: resizeMode property to control how the image is resized
+    resizeMode: 'cover',
     borderEndEndRadius: 100,
     borderTopEndRadius: 100,
     borderTopLeftRadius: 100,

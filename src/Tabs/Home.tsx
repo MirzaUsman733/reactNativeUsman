@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
 import MyIcon from '../Components/Icon';
+import InputWithIcon from '../Components/InputWithIcon';
 
 interface HomeProps {
   navigation: NavigationProp<any>; // Replace 'any' with the type of your navigation params
@@ -15,7 +16,7 @@ const Home: React.FC<HomeProps> = ({navigation}) => {
         onPress={() => navigation.navigate('Login')}
         title="Go to Login"
       />
-      <MyIcon />
+      <InputWithIcon/>
     </View>
   );
 };

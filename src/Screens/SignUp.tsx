@@ -1,29 +1,147 @@
-import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-
-interface SignUpProps {}
-
-export class SignUp extends Component<SignUpProps> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}> About </Text>
-      </View>
-    );
-  }
+import React, {useState} from 'react';
+import {View, TextInput, Button, StyleSheet, Text, Alert} from 'react-native';
+import {NavigationProp} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {TouchableOpacity} from 'react-native';
+interface LoginProps {
+  navigation: NavigationProp<any>;
 }
+const Login: React.FC<LoginProps> = ({navigation}) => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    if (!email || !email.includes('@')) {
+      Alert.alert('Invalid Email', 'Please enter a valid email address.');
+      return;
+    }
+    navigation.navigate('Home');
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Sign Up</Text>
+      <View style={styles.inputContainer}>
+        <Icon
+          name="user"
+          size={20}
+          color="black"
+          style={{marginRight: 10, marginLeft: 10}}
+        />
+        <TextInput
+          placeholder="Username"
+          placeholderTextColor="rgba(0, 0, 0, 0.5);"
+          value={username}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          onChangeText={setUsername}
+          style={styles.input}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Icon
+          name="user"
+          size={20}
+          color="black"
+          style={{marginRight: 10, marginLeft: 10}}
+        />
+        <TextInput
+          placeholder="Email / Phone Number"
+          placeholderTextColor="rgba(0, 0, 0, 0.5);"
+          value={email}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          onChangeText={setEmail}
+          style={styles.input}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Icon
+          name="lock"
+          size={20}
+          color="black"
+          style={{marginRight: 10, marginLeft: 10}}
+        />
+        <TextInput
+          placeholder="Password"
+          placeholderTextColor="rgba(0, 0, 0, 0.5);"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+          style={styles.input}
+        />
+      </View>
+      <TouchableOpacity onPress={handleLogin} style={styles.buttonContainer}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Login</Text>
+        </View>
+      </TouchableOpacity>
+      <Text style={styles.text}>
+        Already have an account{' '}
+        <Text onPress={() => navigation.navigate('Login')} style={styles.link}>
+          {' '}
+          Sign in{' '}
+        </Text>
+      </Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
-    fontSize: 24,
-    color: 'blue',
+  inputContainer: {
+    width: '80%',
+    marginVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: 'gray',
+    color: 'black',
+    borderWidth: 1,
+    padding: 1,
+    borderEndEndRadius: 100,
+    borderTopEndRadius: 100,
+    borderTopLeftRadius: 100,
+    borderTopRightRadius: 100,
+    borderBottomEndRadius: 100,
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 100,
+  },
+  buttonContainer: {
+    margin: 10,
+    width: '40%',
+  },
+  button: {
+    backgroundColor: '#095a55',
+    padding: 12,
+    borderRadius: 50,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+  },
+  title: {
+    marginTop: 40,
+    marginBottom: 10,
+    fontSize: 30,
+    color: '#095a55',
     fontWeight: 'bold',
+  },
+  text: {
+    marginTop: 20,
+    fontSize: 18,
+    color: 'black',
+  },
+  link: {
+    color: '#095a55',
+    textDecorationLine: 'underline',
+  },
+  input: {
+    color: 'black',
   },
 });
 
-export default SignUp;
+export default Login;

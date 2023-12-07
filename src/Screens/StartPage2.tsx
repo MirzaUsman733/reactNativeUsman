@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Image } from 'react-native';
+import {Image} from 'react-native';
 
 interface StartPage2Props {
   navigation: NavigationProp<any>;
@@ -13,18 +13,20 @@ const StartPage2: React.FC<StartPage2Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
-        //   source={require('')}
-        // or
         source={{
           uri: 'https://images.unsplash.com/photo-1463693396721-8ca0cfa2b3b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGlnaCUyMGVuZCUyMHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D',
-        }} // for remote images
+        }}
         style={styles.image}
       />
       <Text style={styles.text}> Start Page 2 </Text>
+      <Text style={styles.txt}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, est
+        in.{' '}
+      </Text>
+
       <TouchableOpacity
         onPress={() => navigation.navigate('StartPage3')}
         style={[styles.button, {backgroundColor: '#007BFF'}]}>
-        {/* <Text style={styles.buttonText}>Go to Screen 3</Text> */}
         <Icon name="arrow-right" size={20} color="white" />
       </TouchableOpacity>
     </View>
@@ -42,12 +44,20 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontWeight: 'bold',
   },
+  txt: {
+    marginLeft: 10,
+    marginRight: 10,
+    fontSize: 18,
+    color: 'black',
+    opacity: 0.5,
+    textAlign: 'center',
+  },
   button: {
     marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#007BFF', // Set your Bootstrap primary color here as well
+    backgroundColor: '#007BFF',
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
@@ -66,7 +76,7 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
-    resizeMode: 'cover', // Optional: resizeMode property to control how the image is resized
+    resizeMode: 'cover',
     borderEndEndRadius: 100,
     borderTopEndRadius: 100,
     borderTopLeftRadius: 100,
