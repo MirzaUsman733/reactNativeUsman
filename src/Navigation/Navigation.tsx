@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import StartPage1 from '../Screens/StartPage1';
 import StartPage2 from '../Screens/StartPage2';
 import StartPage3 from '../Screens/StartPage3';
+import SocialLinks from '../Screens/SocialLinks';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function Root() {
@@ -68,6 +69,7 @@ export default function App() {
             component={StartPage2}
             options={{headerShown: false}}
           />
+
           <Stack.Screen
             name="StartPage3"
             component={StartPage3}
@@ -81,6 +83,11 @@ export default function App() {
           <Stack.Screen
             name="SignUp"
             component={SignUp}
+            options={{title: ''}}
+          />
+          <Stack.Screen
+            name="SocialLinks"
+            component={SocialLinks}
             options={{title: ''}}
           />
           <Stack.Screen name="Login" component={Login} options={{title: ''}} />

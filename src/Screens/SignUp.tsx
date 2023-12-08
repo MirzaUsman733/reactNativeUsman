@@ -21,7 +21,7 @@ const Login: React.FC<LoginProps> = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+      <Text style={styles.title}>Sign up</Text>
       <View style={styles.inputContainer}>
         <Icon
           name="user"
@@ -74,14 +74,13 @@ const Login: React.FC<LoginProps> = ({navigation}) => {
       </View>
       <TouchableOpacity onPress={handleLogin} style={styles.buttonContainer}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Sign Up</Text>
         </View>
       </TouchableOpacity>
       <Text style={styles.text}>
-        Already have an account{' '}
+        Already have an account
         <Text onPress={() => navigation.navigate('Login')} style={styles.link}>
-          {' '}
-          Sign in{' '}
+          Sign in
         </Text>
       </Text>
     </View>
